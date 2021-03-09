@@ -1,6 +1,6 @@
-# Bachillerato Popular Travesti Trans Mocha Celis
+# nayra coop's landing template
 
-Sitio web del Bachillerato Popular Travesti Trans Mocha Celis desarrollado en Vue.js. 
+Landing template en Vue.js para usar como base de proyectos simples.
 
 ## Instalación
 

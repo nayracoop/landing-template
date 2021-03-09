@@ -1,7 +1,7 @@
 {
-  "name": "mochacelis",
-  "version": "1.1.0",
-  "description": "Mocha Celis web",
+  "name": "landing-template",
+  "version": "1.0.0",
+  "description": "landing template",
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --progress --config build/webpack.config.dev.js --host=0.0.0.0",
@@ -9,8 +9,7 @@
   },
   "keywords": [
     "Vue",
-    "Webpack 4",
-    "Mocha Celis"
+    "Webpack 4"
   ],
   "author": "nayracoop",
   "license": "GPL-3.0",
@@ -69,6 +68,6 @@
     "webpack-merge": "^4.2.2"
   },
   "repository": {
-    "url": "https://github.com/nayracoop/mochacelis"
+    "url": "https://github.com/nayracoop/landing-template"
   }
 }
