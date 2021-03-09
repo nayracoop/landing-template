@@ -91,7 +91,6 @@ export default {
 <style lang="scss">
     @import 'assets/scss/variables';
 
-
     header {
         transition: background-color .3s ease-in-out;
         background: $color-dark;

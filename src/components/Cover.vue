@@ -88,14 +88,12 @@ export default {};
 
     @media all and (max-width: 450px) {
         #cover {
-
             .cover-info {
                 h1{
                     font-size: 1.3rem;
                     margin: 20px auto 40px;
                 }
                 h2 {
-                    //padding-top: 60px;
                     font-size: 1.85rem;
                 }
                 p {
