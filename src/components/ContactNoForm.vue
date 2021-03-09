@@ -10,26 +10,22 @@
         </b-row>
         <b-row class="contact-body mb-5">
             <b-col class="col-12 col-lg-5">
-            <div class="address">
-                <p>Bachillerato Popular Trans Mocha Celis</p>
-                <p>Av. Federico Lacroze 4181, 5to piso.</p>
-                <p>Buenos Aires, Bs. As.</p>
-                <p>C1427EDG ARGENTINA</p>
-                <p>Tel: +54 (011) 4554-9048</p>
+            <div class="address" v-for="(line, index) in address">
+                <p :key="index">{{line}}</p>
             </div>
             <div class="email-list">
                 <p>{{ $t("contact.inquiries")}}</p>
-                <a class="long-mail" href="mailto: info@bachilleratomochacelis.edu.ar">info@bachilleratomochacelis.edu.ar</a>
+                <a class="long-mail" :href="'mailto: ' + emailList.inquiries">{{emailList.inquiries}}</a>
                 <p>{{ $t("contact.support")}}</p>
-                <a class="long-mail" href="mailto: cooperadora@bachilleratomochacelis.edu.ar">cooperadora@bachilleratomochacelis.edu.ar</a>
+                <a class="long-mail" :href="'mailto: ' + emailList.support">{{emailList.support}}</a>
                 <p>{{ $t("contact.students")}}</p>
-                <a class="long-mail" href="mailto: preceptoria@bachilleratomochacelis.edu.ar">preceptoria@bachilleratomochacelis.edu.ar</a>
+                <a class="long-mail" :href="'mailto: ' + emailList.students">{{emailList.students}}</a>
             </div>
             <ul class="social-links">
                 <li>
                     <a
                         target="_blank"
-                        href="https://www.facebook.com/mochacelis/"
+                        :href="links.facebook"
                         title="Facebook"
                     >
                         <font-awesome-icon :icon="['fab', 'facebook-square']" />
@@ -39,7 +35,7 @@
                 <li>
                     <a
                         target="_blank"
-                        href="https://www.instagram.com/mochacelis/"
+                        :href="links.instagram"
                         title="Instagram"
                     >
                         <font-awesome-icon :icon="['fab', 'instagram']" />
@@ -49,7 +45,7 @@
                 <li>
                     <a
                         target="_blank"
-                        href="https://twitter.com/BachiTransMocha"
+                        :href="links.twitter"
                         title="Twitter"
                     >
                         <font-awesome-icon :icon="['fab', 'twitter']" />
@@ -58,7 +54,7 @@
                 </li>
                 <li class="mt-1 mb-1">
                     <a  target="_blank"
-                        href="mailto: info@bachilleratomochacelis.edu.ar"
+                        :href="links.mail"
                         title="Mail"
                     >
                         <font-awesome-icon :icon="['fas','envelope']" />
@@ -70,7 +66,7 @@
             <b-col class="col-12 col-lg-7 map">
                 <iframe 
                     id="map"
-                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6569.3518211253695!2d-58.458708037097146!3d-34.58706615504157!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd437cf863662c1c2!2sBachillerato%20Popular%20Mocha%20Celis!5e0!3m2!1ses-419!2sar!4v1590551191925!5m2!1ses-419!2sar" 
+                    :src="mapSrc" 
                     frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0">
                 </iframe>
             </b-col>
@@ -80,7 +76,33 @@
 </template>
 
 <script>
-export default {}
+export default {
+    data() {
+        return {
+            address: [
+                'Bachillerato Popular Trans Mocha Celis',
+                'Av. Federico Lacroze 4181, 5to piso.',
+                'Buenos Aires, Bs. As.',
+                'C1427EDG ARGENTINA',
+                'Tel: +54 (011) 4554-9048'
+            ],
+            emailList: {
+                inquiries: 'info@bachilleratomochacelis.edu.ar',
+                support: 'cooperadora@bachilleratomochacelis.edu.ar',
+                students: 'preceptoria@bachilleratomochacelis.edu.ar'
+
+            },
+            links: {
+                facebook: 'https://www.facebook.com/mochacelis/',
+                twitter: 'https://twitter.com/BachiTransMocha',
+                instagram: 'https://www.instagram.com/mochacelis/',
+                mail: 'mailto: info@bachilleratomochacelis.edu.ar'
+            },
+            mapSrc: 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6569.3518211253695!2d-58.458708037097146!3d-34.58706615504157!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd437cf863662c1c2!2sBachillerato%20Popular%20Mocha%20Celis!5e0!3m2!1ses-419!2sar!4v1590551191925!5m2!1ses-419!2sar'
+        }
+    }
+
+}
 </script>
 
 <style lang="scss">

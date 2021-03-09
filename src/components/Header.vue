@@ -3,60 +3,48 @@
         <b-container>
             <b-row>
                 <b-col>
-                    <b-navbar
-                        toggleable="lg"
-                        type="light"
-                    >
+                    <b-navbar toggleable="lg" type="light">
                         <b-navbar-brand href="#cover">
                             <h1>
                                 <img
                                 src="static/img/logo-header.png"
-                                alt="Mocha Celis logo"
+                                :alt="$t('logo-alt')"
                                 class="header-logo"
                                 >
-                                <b class="sr-only"><abbr title="Bachillerato Popular Trans Mocha Celis">La Mocha Celis</abbr></b>
+                                <b class="sr-only"><abbr :title="$t('title.full')">{{$t('title.abbr')}}</abbr></b>
                             </h1>
                         </b-navbar-brand>
 
-                        <b-navbar-toggle
-                        id="navbar-toggle"
-                        target="nav-collapse"
-                        />
-                        <label
-                        class="sr-only"
-                        for="navbar-toggle"
-                        >{{ $t('Open') }}</label>
+                        <b-navbar-toggle id="navbar-toggle" target="nav-collapse" />
+                        <label class="sr-only" for="navbar-toggle">{{ $t('Open') }}</label>
 
-                        <b-collapse
-                        id="nav-collapse"
-                        is-nav
-                        >
+                        <b-collapse id="nav-collapse" is-nav>
                             <b-navbar-nav class="ml-auto">
                                 <b-nav-item
-                                href="#cover"
-                                :class="{ active: highlight === 'cover' }"
+                                        href="#cover"
+                                        :class="{ active: highlight === 'cover' }"
                                 >
-                                {{ $t('Home') }}
+                                    {{ $t('Home') }}
                                 </b-nav-item>
 
                                 <b-nav-item
-                                href="#faq"
-                                :class="{ active: highlight === 'faq' }"
+                                        href="#faq"
+                                        :class="{ active: highlight === 'faq' }"
                                 >
-                                {{ $t('faq.title') }}
+                                    {{ $t('faq.title') }}
                                 </b-nav-item>
                             
                                 <b-nav-item
-                                href="#donations"
-                                :class="{ active: highlight === 'donations' }"
+                                        href="#donations"
+                                        :class="{ active: highlight === 'donations' }"
                                 >
-                                {{ $t('donations.title') }}
+                                    {{ $t('donations.title') }}
                                 </b-nav-item>
                                 <b-nav-item
-                                href="#contact"
-                                :class="{ active: highlight === 'contact'}"
+                                        href="#contact"
+                                        :class="{ active: highlight === 'contact'}"
                                 >
-                                {{ $t('contact.title') }}
+                                    {{ $t('contact.title') }}
                                 </b-nav-item>
 
                                 <b-nav-item-dropdown class="lang-selector" :text="$i18n.locale" right>
@@ -109,6 +97,7 @@ export default {
         background: $color-dark;
         text-transform: uppercase;
         font-weight: bold;
+
         .social-links-fixed {
             right: -40px;
             transition: right .3s ease-in-out;
@@ -130,6 +119,7 @@ export default {
                 }
             }
         }
+
         &.scrolled {
             background: $color-dark;
             box-shadow: 1px 1px 3px 1px rgba(128, 128, 128, 0.1);
@@ -309,7 +299,6 @@ export default {
                 #navbar-toggle[aria-expanded="false"] {
                     .navbar-toggler-icon {
                         background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3C!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.1' id='Layer_1' fill='white' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 15 15' style='enable-background:new 0 0 15 15;' xml:space='preserve'%3E%3Cg%3E%3Cg%3E%3Crect y='4' width='15' height='1.9'/%3E%3C/g%3E%3Cg%3E%3Crect x='5' y='9.1' width='10' height='1.9'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A")!important;
-                        /*background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(0, 0, 0)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E")!important;*/
                     }
                 }
                 #navbar-toggle[aria-expanded="true"] {
