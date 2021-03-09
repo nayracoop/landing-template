@@ -43,20 +43,20 @@
                                 href="#faq"
                                 :class="{ active: highlight === 'faq' }"
                                 >
-                                {{ $t('About Mocha Celis') }}
+                                {{ $t('faq.title') }}
                                 </b-nav-item>
                             
                                 <b-nav-item
                                 href="#donations"
                                 :class="{ active: highlight === 'donations' }"
                                 >
-                                {{ $t('Donate') }}
+                                {{ $t('donations.title') }}
                                 </b-nav-item>
                                 <b-nav-item
-                                href="#footer"
+                                href="#contact"
                                 :class="{ active: highlight === 'contact'}"
                                 >
-                                {{ $t('Contact Us') }}
+                                {{ $t('contact.title') }}
                                 </b-nav-item>
 
                                 <b-nav-item-dropdown class="lang-selector" :text="$i18n.locale" right>

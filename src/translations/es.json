@@ -6,10 +6,11 @@
             "Plan de Estudios (3 años)",
             "Bachiller Peritx Auxiliar en Desarrollo de las Comunidades"
         ],
-        "btn-text-1": "Terminá el secundario",
-        "btn-text-2": "Colaborá"
+        "image-alt": "BACHILLERATO POPULAR TRAVESTI-TRANS MOCHA CELIS",
+        "cta-1": "Terminá el secundario",
+        "cta-2": "Colaborá"
     },
-    "about": {
+    "faq": {
         "title": "Quiénes Somos",
         "content": [
             {
@@ -60,7 +61,9 @@
         ],
         "donate": "Colaborar",
         "donateButton": "Donar",
-        "suscripcion": "Donación mensual"
+        "suscripcion": "Donación mensual",
+        "donation-type-1": "Dentro de Argentina",
+        "donation-type-2": "Desde el exterior"
     },
     "contact": {
         "title": "Contactanos",
@@ -73,9 +76,6 @@
         "licence": "El contenido de este sitio se distribuye bajo una licencia",
         "licenceLinkTitle": "Atribución-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)"
     },
-    "About Mocha Celis": "Quiénes Somos",
-    "Donate": "Colaborá",
-    "Contact Us": "Contactanos",
     "Open": "Abrir",
     "This field is required": "Este campo es requerido",
     "Email address": "Email",

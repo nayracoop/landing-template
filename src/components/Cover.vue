@@ -1,5 +1,5 @@
 <template>
-    <div id="cover" class>
+    <div id="cover"  class="section">
         <b-container class="cover-info">
             <b-row>
                 <b-col class="col-12">
@@ -9,19 +9,20 @@
             <b-row>
                 <b-row class="cover-image">
                     <img
-                        src="static/img/cover-image-3.png"
-                        alt="Bachillerato Popular Travesti-Trans Mocha Celis"
+                        src="static/img/cover-image.png"
+                        :alt="$t('cover.image-alt')"
                     />
                 </b-row>
                 <b-row class="cover-buttons">
                     <b-col class="col-12 col-md-6">
-                        <b-button
-                        class="cover-button b-purple"
-                        href="mailto: preceptoria@bachilleratomochacelis.edu.ar"
-                        >{{ $t('cover.btn-text-1') }}</b-button>
+                        <b-button class="cover-button b-purple">
+                            {{ $t('cover.cta-1') }}
+                        </b-button>
                     </b-col>
                     <b-col class="col-12 col-md-6">
-                        <b-button class="cover-button b-orange" href="#donations">{{ $t('cover.btn-text-2') }}</b-button>
+                        <b-button class="cover-button b-orange">
+                            {{ $t('cover.cta-2') }}
+                        </b-button>
                     </b-col>
                 </b-row>
             </b-row>
@@ -39,8 +40,9 @@ export default {};
     #cover {
         color: $color-dark;
         position: relative;
-        margin-top: 100px;
-        padding-bottom: 90px;
+        display: flex;
+        height: 100vh;
+
         .cover-info {
             position: relative;
             margin: auto;

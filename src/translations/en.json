@@ -6,16 +6,16 @@
             "Plan de Estudios (3 años)",
             "Bachiller Peritx Auxiliar en Desarrollo de las Comunidades"
         ],
-        "btn-text-1": "Finish High-School",
-        "btn-text-2": "Donate"
+        "image-alt": "BACHILLERATO POPULAR TRAVESTI-TRANS MOCHA CELIS",
+        "cta-1": "Finish High-School",
+        "cta-2": "Donate"
     },
     "faq": {
         "title": "About Mocha Celis ",
         "content": [
             {
                 "subtitle": "What is the Mocha Celis Trans High School?",
-                "text": "“La Mocha” (Experimental Educational Unit Number 16) is a free high school, founded in 2011 with the mission to foster the inclusion of trans-transvestite* persons, and others, in formal education to address the structural discrimination they face. La Mocha was founded at the intersection of trans activism and the bachilleratos populares, high school equivalency programs geared to including those excluded from formal education for an array of reasons. The Mocha Celis prepares leaders that expand the trans movement and facilitates inclusion into the workforce.",
-                "comment": "*In Argentina, the term “travesti-trans” is widely used to refer to the trans community and its members."
+                "text": "“La Mocha” (Experimental Educational Unit Number 16) is a free high school, founded in 2011 with the mission to foster the inclusion of trans-transvestite* persons, and others, in formal education to address the structural discrimination they face. La Mocha was founded at the intersection of trans activism and the bachilleratos populares, high school equivalency programs geared to including those excluded from formal education for an array of reasons. The Mocha Celis prepares leaders that expand the trans movement and facilitates inclusion into the workforce."
             },
             {
                 "subtitle": "Why is it called “Mocha Celis”??",
@@ -60,7 +60,9 @@
         ],
         "donate": "Donate",
         "donateButton": "Donate",
-        "suscripcion": "Monthly donation"
+        "suscripcion": "Monthly donation",
+        "donation-type-1": "From Argentina",
+        "donation-type-2": "From Abroad"
     },
     "contact": {
         "title": "Contact Us",

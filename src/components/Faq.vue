@@ -1,5 +1,5 @@
 <template>
-    <section id="faq" class="bg-grey">
+    <section id="faq" class="bg-grey section">
         <b-container>
             <b-row class="faq">
                 <b-col class="col-12 col-lg-6 mb-5 section-heading">

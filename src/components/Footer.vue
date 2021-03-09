@@ -1,164 +1,70 @@
 <template>
-    <footer id="footer" class="bg-grey">
+    <div id="bottom">
+        <hr>
         <b-container>
         <b-row>
-            <b-col class="col-12 col-md-6 section-heading">
-            <h2>
-                {{$t('contact.title')}}
-            </h2>
-            </b-col>
-        </b-row>
-        <b-row class="contact-body mb-5">
-            <b-col class="col-12 col-lg-6">
-            <div class="address">
-                <p>Bachillerato Popular Trans Mocha Celis</p>
-                <p>Av. Federico Lacroze 4181, 5to piso.</p>
-                <p>Buenos Aires, Bs. As.</p>
-                <p>C1427EDG ARGENTINA</p>
-                <p>Tel: +54 (011) 4554-9048</p>
+            <b-col class="col-12">
+            <div class="real-footer text-center">
+                <small class="made-with mt-3"><a target="_blank" href="https://nayra.coop" v-html="$t('footer.signature')"></a></small>
+                <div class="licence-cont mt-2">
+                <small class="licence">{{ $t('footer.licence') }} <a target="_blank" href="http://creativecommons.org/licenses/by-sa/4.0/">{{ $t('footer.licenceLinkTitle') }}.</a></small>
+                <a target="_blank" rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+                    <img class="mt-3" alt="Licencia Creative Commons" src="static/img/licence.png">
+                </a>
+                </div>
             </div>
-            <div class="email-list">
-                <p>{{ $t("contact.inquiries")}}</p>
-                <a class="long-mail" href="mailto: info@bachilleratomochacelis.edu.ar">info@bachilleratomochacelis.edu.ar</a>
-                <p>{{ $t("contact.support")}}</p>
-                <a class="long-mail" href="mailto: cooperadora@bachilleratomochacelis.edu.ar">cooperadora@bachilleratomochacelis.edu.ar</a>
-                <p>{{ $t("contact.students")}}</p>
-                <a class="long-mail" href="mailto: preceptoria@bachilleratomochacelis.edu.ar">preceptoria@bachilleratomochacelis.edu.ar</a>
-            </div>
-            <ul class="social-links">
-                <li>
-                    <a
-                        target="_blank"
-                        href="https://www.facebook.com/mochacelis/"
-                        title="Facebook"
-                    >
-                        <font-awesome-icon :icon="['fab', 'facebook-square']" />
-                        <span class="sr-only">Facebook</span>
-                    </a>
-                </li>
-                <li>
-                    <a
-                        target="_blank"
-                        href="https://www.instagram.com/mochacelis/"
-                        title="Instagram"
-                    >
-                        <font-awesome-icon :icon="['fab', 'instagram']" />
-                        <span class="sr-only">Instagram</span>
-                    </a>
-                </li>
-                <li>
-                    <a
-                        target="_blank"
-                        href="https://twitter.com/BachiTransMocha"
-                        title="Twitter"
-                    >
-                        <font-awesome-icon :icon="['fab', 'twitter']" />
-                        <span class="sr-only">Twitter</span>
-                    </a>
-                </li>
-                <li class="mt-1 mb-1">
-                    <a  target="_blank"
-                        href="mailto: info@bachilleratomochacelis.edu.ar"
-                        title="Mail"
-                    >
-                        <font-awesome-icon :icon="['fas','envelope']" />
-                        <span class="sr-only">Mail</span>
-                    </a>
-                </li>
-            </ul>
-            </b-col>
-            <b-col class="col-12 col-lg-6 map">
-            <iframe 
-                id="map"
-                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6569.3518211253695!2d-58.458708037097146!3d-34.58706615504157!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd437cf863662c1c2!2sBachillerato%20Popular%20Mocha%20Celis!5e0!3m2!1ses-419!2sar!4v1590551191925!5m2!1ses-419!2sar" 
-                frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
             </b-col>
         </b-row>
         </b-container>
-    </footer>
+    </div>
 </template>
-
 <script>
-export default {}
+export default {
+    
+}
 </script>
 
 <style lang="scss">
     @import 'assets/scss/variables';
 
-    .social-links {
-        margin: auto;
-        text-align: left;
-        li {
-            display: inline-block;
-            margin: 20px 40px;
-            font-size: 1.25em;
-            a {
-                color: $color-dark;
-                &:hover {
-                    color: $color-purple;
-                }
-            }
+    #bottom {
+        hr {
+            display:block;
+            border:none;
+            height:10px;
+            background-repeat: repeat-x;
+            background-size:contain;
+            margin: 0px;        
         }
-    }
-
-    #footer {
-        padding-top: 65px;
-        padding-bottom: 35px;
-        
-        .contact-body {
-            justify-content: space-around;
-        }
-        .address {
-            text-align: left;
-            padding: 15px 0px;
-            p {
-                margin-bottom: 2px;
+        .real-footer {
+            padding: 20px 0;
+        } 
+        .licence-cont {
+            img {
+                width: 58px;
             }
-        }
-
-        .email-list {
-            text-align: left;
-            padding: 15px 0px;
-            p {
-                margin-bottom: 2px;
-                font-weight: bold;
+            small {
+                font-size: .7rem;
             }
-            a {
+            a { 
                 display: block;
-                margin-bottom: 10px;
             }
         }
-
-        #map {
-            margin: auto;
-            min-height: 300px;
-            width: 100%;
-        }
-        .social-links { 
-            margin-bottom: 25px;
-        }
-        .social-links li {
-            margin: 0px 30px 0 0!important;
-        }
-    }
-
-    @media all and (max-width:768px) {
-        footer {
-            nav {
-                ul.navbar-nav {
-                    flex-direction: column;
-                    li {
-                        margin: 10px 15px;
+        small {
+            &.made-with {
+                span:first-of-type {
+                    color: $color-dark;
+                }
+                span:last-of-type {
+                    color: #ee6161;
+                }
+                &:hover {
+                    span:first-of-type {
+                        color: #961888;
                     }
                 }
             }
         }
     }
 
-    @media all and (max-width: 450px) {
-        .long-mail {
-            max-width: 90%;
-            font-size: 0.75em;
-        }
-    }
 </style>

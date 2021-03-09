@@ -4,8 +4,8 @@
     <cover-section ref="cover" />
     <faq-section ref="faq" />
     <donations-section ref="donations" />
-    <mocha-footer />
-    <real-footer/>
+    <contact-section ref="contact" />
+    <footer-section/>
   </div>
 </template>
 
@@ -14,8 +14,8 @@ import PageHeader from 'components/Header.vue'
 import CoverSection from 'components/Cover.vue'
 import FaqSection from 'components/Faq.vue'
 import DonationsSection from 'components/Donations.vue'
-import MochaFooter from 'components/Footer.vue'
-import RealFooter from 'components/RealFooter.vue'
+import ContactSection from 'components/ContactNoForm.vue'
+import FooterSection from 'components/Footer.vue'
 
 
 export default {
@@ -24,8 +24,8 @@ export default {
     CoverSection,
     FaqSection,
     DonationsSection,
-    MochaFooter,
-    RealFooter
+    ContactSection,
+    FooterSection
   },
   data () {
     return {

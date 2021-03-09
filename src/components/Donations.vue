@@ -1,5 +1,5 @@
 <template>
-    <section id="donations">
+    <section id="donations" class="section">
         <b-container>
         <b-row>
             <b-col class="col-12 col-md-6 section-heading">
@@ -11,7 +11,7 @@
         <b-row>
             <b-col class="col-12 col-md-4">
             <div class="donation-type mb-5">
-                <h4>Dentro de Argentina</h4>
+                <h4>{{$t('donations.donation-type-1')}}</h4>
                 <p><em>via MercadoPago</em></p>
                 <b-button   class="donate-button b-green"
                             mp-mode="dftl" 
@@ -39,7 +39,7 @@
                 </b-button>
             </div>
             <div class="donation-type">
-                <h4>Desde el exterior</h4>
+                <h4>{{$t('donations.donation-type-2')}}</h4>
                 <p><em>via PayPal</em></p>
                 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
                     <input type="hidden" name="cmd" value="_donations" />
@@ -56,9 +56,9 @@
             </div>
             </b-col>   
             <b-col class="col-12 col-md-8">
-            <p>{{ $t('donations.content[0]') }}</p>
-            <p>{{ $t('donations.content[1]') }}</p>
-            <p>{{ $t('donations.content[2]') }}</p>
+                <p>{{ $t('donations.content[0]') }}</p>
+                <p>{{ $t('donations.content[1]') }}</p>
+                <p>{{ $t('donations.content[2]') }}</p>
             </b-col>
         </b-row>
         </b-container>

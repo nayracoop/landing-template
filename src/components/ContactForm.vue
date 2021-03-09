@@ -1,5 +1,5 @@
 <template>
-    <section id="contact">
+    <section id="contact-form" class="section">
         <b-container>
             <b-row>
                 <b-col class="col-12 section-heading">

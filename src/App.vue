@@ -101,11 +101,9 @@
         background-color: $color-orange!important;
     }
 
-    #about,
-    #contact,
-    #donations {
-        padding-top: 90px;
-        padding-bottom: 90px;
+    .section {
+        padding-top: 70px;
+        padding-bottom: 70px;
         border-bottom: 1px solid rgba(211, 211, 211, 0.3);
         border-top: 1px solid rgba(211, 211, 211, 0.3);
     }
@@ -118,8 +116,6 @@
         margin-bottom: 40px;
         margin-top: 50px;
     }
-
-    
 
     .btn {
         border-radius: 0;
