@@ -4,8 +4,7 @@
         <b-row>
             <b-col class="col-12 col-md-6 section-heading">
             <h2 class="pb-2">
-                <span class="initial">
-                {{$t('donations.title')[0]}}</span>{{ $t('donations.title').substr(1)}}
+                {{$t('donations.title')}}</span>
             </h2>
             </b-col>
         </b-row>
@@ -77,16 +76,6 @@
     @import 'assets/scss/variables';
 
     #donations {
-        .section-heading {
-            h2 {
-                .initial {
-                    background-color: $color-orange;
-                    width: 1em;
-                    height: 1em;
-                    padding: 0 .2em;
-                }
-            }
-        }
         p {
             text-align: left;
         }

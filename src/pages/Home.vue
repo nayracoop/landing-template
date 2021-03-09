@@ -2,7 +2,7 @@
   <div id="wrapper">
     <page-header ref="header" :highlight="currentSection" :class="{ scrolled }" />
     <cover-section ref="cover" />
-    <about-section ref="about" />
+    <faq-section ref="about" />
     <donations-section ref="donations" />
     <mocha-footer />
     <real-footer/>
@@ -12,7 +12,7 @@
 <script>
 import PageHeader from 'components/Header.vue'
 import CoverSection from 'components/Cover.vue'
-import AboutSection from 'components/About.vue'
+import FaqSection from 'components/Faq.vue'
 import DonationsSection from 'components/Donations.vue'
 import MochaFooter from 'components/Footer.vue'
 import RealFooter from 'components/RealFooter.vue'
@@ -22,7 +22,7 @@ export default {
   components: {
     PageHeader,
     CoverSection,
-    AboutSection,
+    FaqSection,
     DonationsSection,
     MochaFooter,
     RealFooter

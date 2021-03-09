@@ -174,16 +174,6 @@ export default {
     @import 'assets/scss/variables';
 
     #contact {
-        .section-heading {
-            h2 {
-                .initial {
-                    background-color: $color-purple;
-                    width: 1em;
-                    height: 1em;
-                    padding: 0 .2em;
-                }
-            }
-        }
         form {
             input,
             textarea,

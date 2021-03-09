@@ -4,8 +4,7 @@
         <b-row>
             <b-col class="col-12 col-md-6 section-heading">
             <h2>
-                <span class="initial">
-                {{$t('contact.title')[0]}}</span>{{ $t('contact.title').substr(1)}}
+                {{$t('contact.title')}}
             </h2>
             </b-col>
         </b-row>
@@ -103,20 +102,6 @@ export default {}
     }
 
     #footer {
-        .section-heading {
-            margin-top:0;
-            h2 {
-                position: relative;
-                margin-bottom: 0;
-                .initial{
-
-                    background-color: $color-purple;
-                    width: 1em;
-                    height: 1em;
-                    padding: 0 .2em;
-                }
-            }
-        }
         padding-top: 65px;
         padding-bottom: 35px;
         

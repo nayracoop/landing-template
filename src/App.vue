@@ -116,14 +116,7 @@
 
     .section-heading {
         margin-bottom: 40px;
-        margin-top: 70px;
-        h2 {
-            .initial {
-                width: 0.9em;
-                height: 0.9em;
-                padding: 0 .1em;
-            }
-        }
+        margin-top: 50px;
     }
 
     
