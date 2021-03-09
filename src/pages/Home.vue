@@ -1,6 +1,6 @@
 <template>
   <div id="wrapper">
-    <mocha-header ref="header" :highlight="currentSection" :class="{ scrolled }" />
+    <page-header ref="header" :highlight="currentSection" :class="{ scrolled }" />
     <cover-section ref="cover" />
     <about-section ref="about" />
     <donations-section ref="donations" />
@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import MochaHeader from 'components/Header.vue'
+import PageHeader from 'components/Header.vue'
 import CoverSection from 'components/Cover.vue'
 import AboutSection from 'components/About.vue'
 import DonationsSection from 'components/Donations.vue'
@@ -20,7 +20,7 @@ import RealFooter from 'components/RealFooter.vue'
 
 export default {
   components: {
-    MochaHeader,
+    PageHeader,
     CoverSection,
     AboutSection,
     DonationsSection,
