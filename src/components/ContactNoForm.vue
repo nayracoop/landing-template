@@ -10,8 +10,8 @@
         </b-row>
         <b-row class="contact-body mb-5">
             <b-col class="col-12 col-lg-5">
-            <div class="address" v-for="(line, index) in address">
-                <p :key="index">{{line}}</p>
+            <div class="address">
+                <p v-for="(line, index) in address" :key="index">{{line}}</p>
             </div>
             <div class="email-list">
                 <p>{{ $t("contact.inquiries")}}</p>

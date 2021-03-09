@@ -78,7 +78,6 @@ export default {
 
     #faq {
         .faq-info {
-            margin: auto;
             margin-bottom: 22px;
             p {
                 text-align: left;
