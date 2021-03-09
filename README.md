@@ -1,4 +1,4 @@
-# nayra coop's landing template
+# Landing básica multipropósito
 
 Landing template en Vue.js para usar como base de proyectos simples.
 
