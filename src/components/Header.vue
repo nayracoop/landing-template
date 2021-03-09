@@ -40,8 +40,8 @@
                                 </b-nav-item>
 
                                 <b-nav-item
-                                href="#about"
-                                :class="{ active: highlight === 'about' }"
+                                href="#faq"
+                                :class="{ active: highlight === 'faq' }"
                                 >
                                 {{ $t('About Mocha Celis') }}
                                 </b-nav-item>

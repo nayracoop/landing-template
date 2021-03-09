@@ -2,7 +2,7 @@
   <div id="wrapper">
     <page-header ref="header" :highlight="currentSection" :class="{ scrolled }" />
     <cover-section ref="cover" />
-    <faq-section ref="about" />
+    <faq-section ref="faq" />
     <donations-section ref="donations" />
     <mocha-footer />
     <real-footer/>
