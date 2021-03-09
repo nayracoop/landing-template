@@ -98,6 +98,10 @@ export default {
         text-transform: uppercase;
         font-weight: bold;
 
+        .header-logo {
+            height: 40px;
+        }
+
         .social-links-fixed {
             right: -40px;
             transition: right .3s ease-in-out;
@@ -141,6 +145,7 @@ export default {
                 right: 0;
             }
         }
+
         nav {
             padding: .2rem 0!important;
             .navbar-brand {
@@ -149,102 +154,8 @@ export default {
                     margin-bottom: 0;
                 }
             }
-        }
-        .navbar-nav {
-            padding: 0;
-            li.nav-item {
-                margin: 0 30px;
-                font-size: .7em;
-                &.cta-item {
-                    color: white;
-                    &.active {
-                        .nav-link {
-                            background: $color-dark!important;
-                            color: #FFF!important;
-                            border: 1px solid #FFF;
-                        }
-                    }
-                    a.nav-link {
-                        border: 1px solid white;
-                        background: transparent;
-                        margin-top: .2rem;
-                        padding: .2rem 1rem;
-                        transition: all .15s ease-in-out;
-                        &:hover {
-                            background: white;
-                            color: $color-yellow;
-                        }
-                    }
-                }
-                a.nav-link {
-                    color: white;
-                    padding: 0.5rem 0;
-                    &:hover,
-                    &:focus {
-                        color: $color-yellow;
-                    }
-                }
-                &.active {
-                    .nav-link {
-                        border-bottom: 1px solid #fff;
-                    }
-                }
-            }
-            li.lang-selector {
-                text-transform: uppercase;
-                a {
-                    &.dropdown-toggle {
-                        color: #FFF!important;
-                        &:hover,
-                        &:active {
-                            color: $color-yellow!important;
-                        }
-                    }
-                    border-color: #FFF!important;
-                    @media all and (max-width: 991px) {
-                        border: 0!important;
-                        a:hover {
-                            border: 0!important;
-                        }
-                    }
-                }
-                ul.dropdown-menu {
-                    min-width: unset;
-                    max-width: 60px;
-                    li {
-                        text-align: center;
-                        a {
-                            padding: 3px 15px;
-                            font-size: .7rem;
-                            &:active {
-                                background: unset;
-                                color: unset;
-                            }
-                        }
-                    }
-                }
-                @media all and (max-width: 991px) {
-                    a {
-                        padding: 0 12px 0 0;
-                        font-size: 1.25rem;
-                    }
-                    margin-bottom: 60px;
-                    border: 0!important;
-                    a:hover {
-                        border: 0!important;
-                    }
-                }
-            }
-        }
-        .header-logo {
-            height: 40px;
-        }
-    }
 
-        @media all and (max-width:991px) {
-        header {
-            background: $color-dark;
-            nav {
+            @media all and (max-width:991px) {
                 #nav-collapse {
                     height: 100vh;
                     transition: none;
@@ -307,41 +218,125 @@ export default {
                     }
                 }
             }
-        }
-    }
 
-    @media all and (max-height: 500px) and (max-width: 991px),
-    all and (orientation: landscape) and (max-height: 500px) and (max-width: 991px) {
-        header nav {
-            #nav-collapse {
-                ul.navbar-nav {
-                    height: 85vh;
-                    overflow: scroll;
-                    margin-top: 0!important;
-                    padding-top: 130px!important;
-                    padding-bottom: 10px;
-                    justify-content: center;
-                    li.nav-item {
-                        margin: 5px 0!important;
-                        a.nav-link {
-                            font-size: 1rem;
+            @media all and (max-height: 500px) and (max-width: 991px),
+            all and (orientation: landscape) and (max-height: 500px) and (max-width: 991px) {
+                #nav-collapse {
+                    ul.navbar-nav {
+                        height: 85vh;
+                        overflow: scroll;
+                        margin-top: 0!important;
+                        padding-top: 130px!important;
+                        padding-bottom: 10px;
+                        justify-content: center;
+                        li.nav-item {
+                            margin: 5px 0!important;
+                            a.nav-link {
+                                font-size: 1rem;
+                            }
+                            &.nav-item:last-of-type {
+                                min-height: unset;
+                                margin-bottom: 5px!important;
+                            }
                         }
-                        &.nav-item:last-of-type {
-                            min-height: unset;
-                            margin-bottom: 5px!important;
+                        .social-links-fixed {
+                            padding-bottom: 20px;
                         }
-                    }
-                    .social-links-fixed {
-                        padding-bottom: 20px;
                     }
                 }
             }
         }
-    }
 
-    @media all and (max-width: 450px) {
-        .nav-item {
-            margin-bottom: 10px!important;
+        .navbar-nav {
+            padding: 0;
+            li.nav-item {
+                margin: 0 30px;
+                font-size: .7em;
+                &.cta-item {
+                    color: white;
+                    &.active {
+                        .nav-link {
+                            background: $color-dark!important;
+                            color: #FFF!important;
+                            border: 1px solid #FFF;
+                        }
+                    }
+                    a.nav-link {
+                        border: 1px solid white;
+                        background: transparent;
+                        margin-top: .2rem;
+                        padding: .2rem 1rem;
+                        transition: all .15s ease-in-out;
+                        &:hover {
+                            background: white;
+                            color: $color-yellow;
+                        }
+                    }
+                }
+                a.nav-link {
+                    color: white;
+                    padding: 0.5rem 0;
+                    &:hover,
+                    &:focus {
+                        color: $color-yellow;
+                    }
+                }
+                &.active {
+                    .nav-link {
+                        border-bottom: 1px solid #fff;
+                    }
+                }
+
+                @media all and (max-width: 450px) {
+                    margin-bottom: 10px!important;
+                }
+            }
+
+            li.lang-selector {
+                text-transform: uppercase;
+                a {
+                    &.dropdown-toggle {
+                        color: #FFF!important;
+                        &:hover,
+                        &:active {
+                            color: $color-yellow!important;
+                        }
+                    }
+                    border-color: #FFF!important;
+                    @media all and (max-width: 991px) {
+                        border: 0!important;
+                        a:hover {
+                            border: 0!important;
+                        }
+                    }
+                }
+                ul.dropdown-menu {
+                    min-width: unset;
+                    max-width: 60px;
+                    li {
+                        text-align: center;
+                        a {
+                            padding: 3px 15px;
+                            font-size: .7rem;
+                            &:active {
+                                background: unset;
+                                color: unset;
+                            }
+                        }
+                    }
+                }
+                @media all and (max-width: 991px) {
+                    a {
+                        padding: 0 12px 0 0;
+                        font-size: 1.25rem;
+                    }
+                    margin-bottom: 60px;
+                    border: 0!important;
+                    a:hover {
+                        border: 0!important;
+                    }
+                }
+            }
         }
     }
 
