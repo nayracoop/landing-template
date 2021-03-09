@@ -98,35 +98,9 @@ export default {
         text-transform: uppercase;
         font-weight: bold;
 
-        .header-logo {
-            height: 40px;
-        }
-
-        .social-links-fixed {
-            right: -40px;
-            transition: right .3s ease-in-out;
-            background-color: $color-dark;
-            @media all and (max-width: 991px) {
-                position: static!important;
-                display: block;
-                box-shadow: none;
-                margin: 0 auto;
-                right: unset!important;
-                left: unset;
-                width: 50%;
-                max-width: 180px;
-                ul {
-                    flex-direction: row!important;
-                    margin: 0 auto;
-                    width: 100%;
-                    justify-content: space-between;
-                }
-            }
-        }
-
         &.scrolled {
-            background: $color-dark;
             box-shadow: 1px 1px 3px 1px rgba(128, 128, 128, 0.1);
+
             .navbar-nav {
                 li.nav-item {
                     .cta-item {
@@ -146,8 +120,13 @@ export default {
             }
         }
 
+        .header-logo {
+            height: 40px;
+        }
+
         nav {
             padding: .2rem 0!important;
+
             .navbar-brand {
                 h1 {
                     font-size: 12px;
@@ -249,6 +228,7 @@ export default {
 
         .navbar-nav {
             padding: 0;
+
             li.nav-item {
                 margin: 0 30px;
                 font-size: .7em;
@@ -335,6 +315,30 @@ export default {
                     a:hover {
                         border: 0!important;
                     }
+                }
+            }
+        }
+
+        .social-links-fixed {
+            right: -40px;
+            transition: right .3s ease-in-out;
+            background-color: $color-dark;
+
+            @media all and (max-width: 991px) {
+                position: static!important;
+                display: block;
+                box-shadow: none;
+                margin: 0 auto;
+                right: unset!important;
+                left: unset;
+                width: 50%;
+                max-width: 180px;
+
+                ul {
+                    flex-direction: row!important;
+                    margin: 0 auto;
+                    width: 100%;
+                    justify-content: space-between;
                 }
             }
         }
