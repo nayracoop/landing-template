@@ -138,36 +138,36 @@ export default {
         }
     },
     methods: {
-    sendMessage () {
-        if (!this.done) {
-            const formData = new FormData()
+        sendMessage () {
+            if (!this.done) {
+                const formData = new FormData()
 
-            formData.append('name', this.form.name)
-            formData.append('companyName', this.form.companyName)
-            formData.append('email', this.form.email)
-            formData.append('service', this.form.services)
-            formData.append('message', this.form.message)
-            this.sending = true
+                formData.append('name', this.form.name)
+                formData.append('companyName', this.form.companyName)
+                formData.append('email', this.form.email)
+                formData.append('service', this.form.services)
+                formData.append('message', this.form.message)
+                this.sending = true
 
-            this.$http
-                .post('/fit/send.php', formData)
-                .then(response => {
-                this.sending = false
-                    if (response.data.enviado) {
+                this.$http
+                    .post('/fit/send.php', formData)
+                    .then(response => {
+                        this.sending = false
+                        if (response.data.enviado) {
+                            this.done = true
+                            this.output = 'Message sent. Thank you!'
+                        } else {
+                            this.output = response.data.mensaje
+                        }
+                    })
+                    .catch(e => {
                         this.done = true
                         this.output = 'Message sent. Thank you!'
-                    } else {
-                        this.output = response.data.mensaje
-                    }
-                })
-                .catch(e => {
-                    this.done = true
-                    this.output = 'Message sent. Thank you!'
-                    // this.sending = false
-                    // this.output = 'An error occurred while trying to send your message.'
-                })
+                        // this.sending = false
+                        // this.output = 'An error occurred while trying to send your message.'
+                    })
+            }
         }
-    }
     },
     computed: {
 

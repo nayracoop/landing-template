@@ -171,10 +171,11 @@
         "Email address": "Email",
         "Enter your email address": "Ingrese su email",
         "Name": "Nombre completo",
-        "Enter your name": "Ingrese su nombre completo",
+        "Enter your name": "Ingrese su nombre",
         "Message": "Mensaje",
         "Enter your message": "Ingrese su mensaje",
         "Send": "Enviar",
+        "¿What service are you looking for?": "¿Qué servicio está buscando?",
         "Message sent. Thank you!": "Mensaje enviado. ¡Muchas gracias!",
         "An error occurred while trying to send your message.": "Ocurrió un error al intentar enviar su mensaje.",
         "Error sending message": "Error al enviar el mensaje"
