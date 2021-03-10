@@ -100,20 +100,6 @@ export default {
         &.scrolled {
             box-shadow: 1px 1px 3px 1px rgba(128, 128, 128, 0.1);
 
-            .navbar-nav {
-                li.nav-item {
-                    .cta-item {
-                        a.nav-link {
-                            border: 1px solid $color-dark;
-                            background: transparent;
-                            &:hover {
-                                background: $color-yellow;
-                                color: #fff;
-                            }
-                        }
-                    }
-                }
-            }
             .social-links-fixed {
                 right: 0;
             }
@@ -140,29 +126,6 @@ export default {
                     margin: 0 30px;
                     font-size: .7em;
 
-                    &.cta-item {
-                        color: white;
-                        &.active {
-                            .nav-link {
-                                background: $color-dark!important;
-                                color: #FFF!important;
-                                border: 1px solid #FFF;
-                            }
-                        }
-                        .nav-link {
-                            border: 1px solid white;
-                            font-weight:bold;
-                            background: red!important;
-                            margin-top: .2rem;
-                            padding: .2rem 1rem;
-                            transition: all .15s ease-in-out;
-                            &:hover {
-                                background: white;
-                                color: $color-yellow;
-                            }
-                        }
-                    }
-
                     &.active {
                         .nav-link {
                             border-bottom: 1px solid #fff;
@@ -178,6 +141,8 @@ export default {
                     .nav-link {
                         color: white;
                         padding: 0.5rem 0;
+                        font-weight: 600;
+
                         &:hover,
                         &:focus {
                             color: $color-yellow;
@@ -252,15 +217,7 @@ export default {
                                     color: white;
                                 }
                             }
-                            &.cta-item {
-                                border: none;
-                                color: white;
-                                a.nav-link {
-                                    background: transparent;
-                                    padding: .5rem 1rem;
-                                    border: 1px solid $color-dark;
-                                }
-                            }
+                            
                             &.lang-selector {
                                 display: flex;
                                 .dropdown-toggle::after {
