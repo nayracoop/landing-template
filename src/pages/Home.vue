@@ -1,10 +1,10 @@
 <template>
   <div id="wrapper">
-    <page-header ref="header" :highlight="currentSection" :class="{ scrolled }" />
-    <cover-section ref="cover" />
-    <faq-section ref="faq" />
-    <donations-section ref="donations" />
-    <contact-section ref="contact" />
+    <page-header id="header" :highlight="currentSection" :class="{ scrolled }" />
+    <cover-section id="cover" />
+    <faq-section id="faq" />
+    <donations-section id="donations" />
+    <contact-section id="contact" />
     <footer-section/>
   </div>
 </template>
