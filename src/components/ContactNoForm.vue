@@ -1,13 +1,8 @@
 <template>
-    <div class="bg-grey section contact">
-        <b-container>
-        <b-row>
-            <b-col class="col-12 col-md-6 section-heading">
-            <h2>
-                {{$t('contact.title')}}
-            </h2>
-            </b-col>
-        </b-row>
+    <section-wrapper class="bg-grey contact">
+        <section-heading>
+            {{$t('contact.title')}}
+        </section-heading>
         <b-row class="contact-body mb-5">
             <b-col class="col-12 col-lg-5">
                 <div class="address">
@@ -71,12 +66,19 @@
                 </iframe>
             </b-col>
         </b-row>
-        </b-container>
-    </div>
+    </section-wrapper>
 </template>
 
 <script>
+import SectionHeading from 'components/snippets/SectionHeading.vue'
+import SectionWrapper from 'components/snippets/SectionWrapper.vue'
+
+
 export default {
+    components: {
+        SectionHeading,
+        SectionWrapper
+    },
     data() {
         return {
             address: [
@@ -104,7 +106,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     @import 'assets/scss/variables';
 
     .contact {

@@ -53,7 +53,7 @@
         font-style: italic;
     }
 
-        .color-yellow {
+    .color-yellow {
         color: $color-yellow;
     }
 
@@ -101,27 +101,8 @@
         background-color: $color-orange!important;
     }
 
-    .section {
-        padding-top: 70px;
-        padding-bottom: 70px;
-        border-bottom: 1px solid rgba(211, 211, 211, 0.3);
-        border-top: 1px solid rgba(211, 211, 211, 0.3);
-    }
-
     .bg-grey {
         background: rgba(244, 244, 244, 0.3);
-    }
-
-    .section-heading {
-        margin-bottom: 40px;
-        margin-top: 50px;
-    }
-
-    .btn {
-        border-radius: 0;
-        padding: .5rem 2.75rem;
-        background: $color-dark;
-        color: #FFF;
     }
 
     @media all and (max-width: 450px) {

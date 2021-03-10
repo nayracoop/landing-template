@@ -5,6 +5,7 @@
     <faq-section id="faq" />
     <donations-section id="donations" />
     <contact-section id="contact" />
+    <contact-form-section/>
     <footer-section/>
   </div>
 </template>
@@ -15,6 +16,7 @@ import CoverSection from 'components/Cover.vue'
 import FaqSection from 'components/Faq.vue'
 import DonationsSection from 'components/Donations.vue'
 import ContactSection from 'components/ContactNoForm.vue'
+import ContactFormSection from 'components/ContactForm.vue'
 import FooterSection from 'components/Footer.vue'
 
 
@@ -25,6 +27,7 @@ export default {
     FaqSection,
     DonationsSection,
     ContactSection,
+    ContactFormSection,
     FooterSection
   },
   data () {

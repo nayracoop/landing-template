@@ -1,43 +1,37 @@
 <template>
-    <section class="section donations">
-        <b-container>
-        <b-row>
-            <b-col class="col-12 col-md-6 section-heading">
-                <h2 class="pb-2">
-                    {{$t('donations.title')}}</span>
-                </h2>
-            </b-col>
-        </b-row>
+    <section-wrapper class="donations">
+        <section-heading>
+            {{$t('donations.title')}}
+        </section-heading>
         <b-row>
             <b-col class="col-12 col-md-4">
-                <div class="donation-group mb-5">
+                <div class="donation-group mb-5" v-if="useMercadopago">
                     <h4>{{$t('donations.donation-type-1')}}</h4>
                     <p><em>via MercadoPago</em></p>
                     <div v-for="(donation, index) in donationButtons">
-                        <b-button  
-                                :class="'donate-button ' + donation.class"
+                        <Button  
+                                :class="donation.class"
                                 mp-mode="dftl" 
                                 :href="donation.link" name="MP-payButton"
                                 :key="index"
                         >
                             {{ $t('donations.donateButton') }} {{donation.amount}}
-                        </b-button>
+                        </Button>
                     </div>
                 </div>
-                <div class="donation-group">
+                <div class="donation-group" v-if="usePaypal">
                     <h4>{{$t('donations.donation-type-2')}}</h4>
                     <p><em>via PayPal</em></p>
                     <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
                         <input type="hidden" name="cmd" value="_donations" />
                         <input type="hidden" name="business" :value="paypalMail" />
                         <input type="hidden" name="currency_code" value="USD" />
-                        <b-button 
+                        <Button 
                             type="submit" 
-                            class="donate-button" 
                             name="submit" 
                             alt="Donate with PayPal button">
                             {{ $t('donations.donateButton') }}
-                        </b-button>
+                        </Button>
                     </form>
                 </div>
             </b-col>   
@@ -47,13 +41,32 @@
                 <p>{{ $t('donations.content[2]') }}</p>
             </b-col>
         </b-row>
-        </b-container>
-    </section>
+    </section-wrapper>
 </template>
 
 <script>
     // (function(){function $MPC_load(){window.$MPC_loaded !== true && (function(){var s = document.createElement("script");s.type = "text/javascript";s.async = true;s.src = document.location.protocol+"//secure.mlstatic.com/mptools/render.js";var x = document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s, x);window.$MPC_loaded = true;})();}window.$MPC_loaded !== true ? (window.attachEvent ?window.attachEvent('onload', $MPC_load) : window.addEventListener('load', $MPC_load, false)) : null;})();
+    import locale from '../translations/locale.json';
+    import SectionHeading from 'components/snippets/SectionHeading.vue'
+    import SectionWrapper from 'components/snippets/SectionWrapper.vue'
+    import Button from 'components/snippets/Button.vue'
+
     export default {
+        components: {
+            SectionHeading,
+            SectionWrapper,
+            Button
+        },
+        props: {
+            usePaypal: {
+                type: Boolean,
+                default: true
+            },
+            useMercadopago: {
+                type: Boolean,
+                default: true
+            }
+        },
         data () {
             return {
                 paypalMail: 'mochadocumental@gmail.com',
@@ -78,13 +91,14 @@
                         link: 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=47243777-d89cc553-92c5-4e1a-bffe-bae83a888f17',
                         class: 'b-red'
                     },
-                ]
+                ],
+                contentArray: locale.en.donations.content
             }
         }
     }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     @import 'assets/scss/variables';
 
     .donations {
@@ -94,17 +108,6 @@
 
         .donation-group {
             padding-bottom: 10px;
-
-            .donate-button {
-                font-size: 1em;
-                width: 90%;
-                margin: 10px auto;
-                border: none;
-
-                &:hover {
-                    opacity: 85%;
-                }
-            }
 
             em {
                 font-style: italic;

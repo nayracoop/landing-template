@@ -15,14 +15,14 @@
                 </b-row>
                 <b-row class="buttons-container">
                     <b-col class="col-12 col-md-6">
-                        <b-button class="cta-button b-purple">
+                        <Button :isCta="true" class="b-purple">
                             {{ $t('cover.cta-1') }}
-                        </b-button>
+                        </Button>
                     </b-col>
                     <b-col class="col-12 col-md-6">
-                        <b-button class="cta-button b-orange">
+                        <Button :isCta="true" class="b-orange">
                             {{ $t('cover.cta-2') }}
-                        </b-button>
+                        </Button>
                     </b-col>
                 </b-row>
             </b-row>
@@ -31,10 +31,16 @@
 </template>
 
 <script>
-export default {};
+import Button from 'components/snippets/Button.vue'
+
+export default {
+    components: {
+        Button
+    },
+};
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     @import 'assets/scss/variables';
 
     .cover {
@@ -73,23 +79,11 @@ export default {};
             width: 93%;
             margin: 0 auto;
             margin-top: 30px;
-
-            .cta-button {
-                display: block;
-                margin-top: 20px;
-                font-size: 1.25em;
-                font-weight: 600;
-                width: 100%;
-                border: none;
-                &:hover {
-                    opacity: 85%;
-                }
-            }
         }
     }
 
     @media all and (max-width: 450px) {
-        #cover {
+        .cover {
             .cover-info {
                 h1{
                     font-size: 1.3rem;
@@ -100,10 +94,6 @@ export default {};
                 }
                 p {
                     font-size: .925rem;
-                }
-                .btn {
-                    font-size: 1rem;
-                    padding: .5rem 2.75rem;
                 }
                 .cover-buttons{
                     width: 100%;

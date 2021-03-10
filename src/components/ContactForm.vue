@@ -1,114 +1,120 @@
 <template>
-    <section id="contact-form" class="section">
-        <b-container>
-            <b-row>
-                <b-col class="col-12 section-heading">
-                    <h2 class="pb-2">
-                        {{ $t('contact.title') }}
-                    </h2>
-                    <p>{{ $t('contact.content') }}</p>
-                </b-col>
-                <b-col>
-                    <b-form
-                        class="w-100"
-                        action="send.php"
-                        :class="{ sending, done }"
-                        method="post"
-                        @submit.prevent="sendMessage"
-                    >
-                        <b-form-row>
-                            <b-form-group
-                                class="col-12 col-md-6"
-                                :label="$t('Name')"
-                                label-for="name"
-                                :description="$t('This field is required')"
-                            >
-                                <b-form-input
-                                id="name"
-                                v-model="form.name"
-                                name="name"
-                                required
-                                :placeholder="$t('Enter your name')"
-                                />
-                            </b-form-group>
-
-                            <b-form-group
-                                class="col-12 col-md-6"
-                                :label="$t('Company name')"
-                                label-for="companyName"
-                            >
-                                <b-form-input
-                                id="companyName"
-                                v-model="form.companyName"
-                                name="companyName"
-                                required
-                                :placeholder="$t('Enter your company name')"
-                                />
-                            </b-form-group>
-                        </b-form-row>
-
-                        <b-form-row>
-                            <b-form-group
-                                class="col-12 col-md-6"
-                                :label="$t('Email address')"
-                                label-for="email"
-                                :description="$t('This field is required')"
-                            >
-                                <b-form-input
-                                id="email"
-                                v-model="form.email"
-                                name="email"
-                                type="email"
-                                required
-                                :placeholder="$t('Enter your email address')"
-                                />
-                            </b-form-group>
-
-                            <b-form-group
-                                class="col-12 col-md-6"
-                                :label="$t('¿What service are you looking for?')"
-                                label-for="service"
-                                :description="$t('This field is required')"
-                            >
-                                <b-form-select
-                                id="service"
-                                v-model="form.services"
-                                name="service"
-                                required>
-                                <option v-for="(service, index) in services" :selected="index === 0" :key="index" :value="$t(service.value)">{{ $t(service.text) }}</option>
-                                </b-form-select>
-                            </b-form-group>
-                        </b-form-row>
-
+    <section-wrapper>
+        <section-heading>
+            {{ $t('contact.title') }}
+        </section-heading>
+        <b-row>
+            <b-col>
+                <b-form
+                    class="w-100"
+                    action="send.php"
+                    :class="{ sending, done }"
+                    method="post"
+                    @submit.prevent="sendMessage"
+                >
+                    <b-form-row>
                         <b-form-group
-                            :label="$t('Message')"
-                            label-for="message"
+                            class="col-12 col-md-6"
+                            :label="$t('Name')"
+                            label-for="name"
+                            :description="$t('This field is required')"
                         >
-                            <b-form-textarea
-                                id="message"
-                                v-model="form.message"
-                                rows="4"
-                                name="message"
-                                :placeholder="$t('Enter your message')"
+                            <b-form-input
+                            id="name"
+                            v-model="form.name"
+                            name="name"
+                            required
+                            :placeholder="$t('Enter your name')"
                             />
                         </b-form-group>
 
-                        <span class="form-output">{{ $t(output) }}</span>
-                        <b-button
-                        type="submit"
-                        class="mt-4 btn d-flex justify-content-center ml-auto"
+                        <b-form-group
+                            class="col-12 col-md-6"
+                            :label="$t('Company name')"
+                            label-for="companyName"
                         >
-                        {{ $t('Send') }}
-                        </b-button>
-                    </b-form>
-                </b-col>
-            </b-row>
-        </b-container>
-    </section>
+                            <b-form-input
+                            id="companyName"
+                            v-model="form.companyName"
+                            name="companyName"
+                            required
+                            :placeholder="$t('Enter your company name')"
+                            />
+                        </b-form-group>
+                    </b-form-row>
+
+                    <b-form-row>
+                        <b-form-group
+                            class="col-12 col-md-6"
+                            :label="$t('Email address')"
+                            label-for="email"
+                            :description="$t('This field is required')"
+                        >
+                            <b-form-input
+                            id="email"
+                            v-model="form.email"
+                            name="email"
+                            type="email"
+                            required
+                            :placeholder="$t('Enter your email address')"
+                            />
+                        </b-form-group>
+
+                        <b-form-group
+                            class="col-12 col-md-6"
+                            :label="$t('¿What service are you looking for?')"
+                            label-for="service"
+                            :description="$t('This field is required')"
+                        >
+                            <b-form-select
+                            id="service"
+                            v-model="form.services"
+                            name="service"
+                            required>
+                            <option v-for="(service, index) in services" :selected="index === 0" :key="index" :value="$t(service.value)">{{ $t(service.text) }}</option>
+                            </b-form-select>
+                        </b-form-group>
+                    </b-form-row>
+
+                    <b-form-group
+                        :label="$t('Message')"
+                        label-for="message"
+                    >
+                        <b-form-textarea
+                            id="message"
+                            v-model="form.message"
+                            rows="4"
+                            name="message"
+                            :placeholder="$t('Enter your message')"
+                        />
+                    </b-form-group>
+
+                    <span class="form-output">{{ $t(output) }}</span>
+                    <Button
+                        type="submit"
+                        class="mr-0 d-flex justify-content-center w-auto"
+                    >
+                    {{ $t('Send') }}
+                    </Button>
+                </b-form>
+            </b-col>
+        </b-row>
+    </section-wrapper>
 </template>
 
 <script>
+import SectionHeading from 'components/snippets/SectionHeading.vue'
+import SectionWrapper from 'components/snippets/SectionWrapper.vue'
+import Button from 'components/snippets/Button.vue'
+
+
+
 export default {
+    components: {
+        SectionHeading,
+        SectionWrapper,
+        Button
+    },
     data () {
         return {
             form: {
@@ -170,44 +176,33 @@ export default {
 </script>
 
 
-<style lang="scss">
+<style lang="scss" scoped>
     @import 'assets/scss/variables';
 
-    #contact {
-        form {
-            input,
-            textarea,
-            select {
-                border-color: $color-dark;
-                border-radius: 0;
-                min-height: 3.25rem;
-                &::placeholder {
-                    color: grey;
-                    font-size: 95%;
-                }
-            }
-            select {
-                background-image: none;
-            }
-            small {
-                font-size: 65%;
-                color: #fff;
-            }
-            .form-output {
-                display: block;
-                text-transform: uppercase;
-                font-weight: 600;
-                color: #6056a5;
+    form {
+        input,
+        textarea,
+        select {
+            border-color: $color-dark;
+            border-radius: 0;
+            min-height: 3.25rem;
+            &::placeholder {
+                color: grey;
+                font-size: 95%;
             }
         }
-    }
-
-    @media all and (max-width:768px) {
-        #contact {
-            .btn {
-                width: 100%;
-                padding: 1rem;
-            }
+        select {
+            background-image: none;
+        }
+        small {
+            font-size: 65%;
+            color: #fff;
+        }
+        .form-output {
+            display: block;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: #6056a5;
         }
     }
 </style>
