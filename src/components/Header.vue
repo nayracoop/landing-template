@@ -4,12 +4,12 @@
             <b-row>
                 <b-col>
                     <b-navbar toggleable="lg" type="light" class="header-wrapper">
-                        <b-navbar-brand href="#cover">
+                        <b-navbar-brand class="logo-container" href="#cover">
                             <h1>
                                 <img
                                 src="static/img/logo-header.png"
                                 :alt="$t('logo-alt')"
-                                class="header-logo"
+                                class="logo"
                                 >
                                 <b class="sr-only"><abbr :title="$t('title.full')">{{$t('title.abbr')}}</abbr></b>
                             </h1>
@@ -105,17 +105,17 @@ export default {
             }
         }
 
-        .header-logo {
-            height: 40px;
-        }
-
         .header-wrapper {
             padding: .2rem 0!important;
 
-            .navbar-brand {
+            .logo-container {
                 h1 {
                     font-size: 12px;
                     margin-bottom: 0;
+                }
+
+                .logo {
+                    height: 40px;
                 }
             }
 
@@ -151,8 +151,9 @@ export default {
                     
                 }
 
-                li.lang-selector {
+                .lang-selector {
                     text-transform: uppercase;
+
                     a {
                         &.dropdown-toggle {
                             color: #FFF!important;
@@ -169,7 +170,8 @@ export default {
                             }
                         }
                     }
-                    ul.dropdown-menu {
+
+                    .dropdown-menu {
                         min-width: unset;
                         max-width: 60px;
                         li {
@@ -202,21 +204,14 @@ export default {
                 #nav-collapse {
                     height: 100vh;
                     transition: none;
-                    ul.navbar-nav {
+                    .navbar-nav {
                         height: 70vh;
                         margin-top: 10vh;
                         justify-content: space-around;
                         align-items: center;
-                        li.nav-item {
+
+                        .nav-item {
                             margin: 0;
-                            a.nav-link {
-                                color: white;
-                                font-size: 1.25rem;
-                                border-bottom: 1px solid transparent;
-                                &:hover {
-                                    color: white;
-                                }
-                            }
                             
                             &.lang-selector {
                                 display: flex;
@@ -239,9 +234,20 @@ export default {
                                     }
                                 }
                             }
+
+
+                            .nav-link {
+                                color: white;
+                                font-size: 1.25rem;
+                                border-bottom: 1px solid transparent;
+                                &:hover {
+                                    color: white;
+                                }
+                            }
                         }
                     }
                 }
+
                 #navbar-toggle[aria-expanded="false"] {
                     .navbar-toggler-icon {
                         background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3C!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.1' id='Layer_1' fill='white' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 15 15' style='enable-background:new 0 0 15 15;' xml:space='preserve'%3E%3Cg%3E%3Cg%3E%3Crect y='4' width='15' height='1.9'/%3E%3C/g%3E%3Cg%3E%3Crect x='5' y='9.1' width='10' height='1.9'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A")!important;
@@ -264,6 +270,7 @@ export default {
                         padding-top: 130px!important;
                         padding-bottom: 10px;
                         justify-content: center;
+
                         .nav-item {
                             margin: 5px 0!important;
 
