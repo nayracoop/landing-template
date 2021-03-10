@@ -1,7 +1,5 @@
 <template>
-    <div id="bottom">
-        <hr>
-        <b-container>
+    <b-container>
         <b-row>
             <b-col class="col-12">
             <div class="footer text-center">
@@ -15,8 +13,7 @@
             </div>
             </b-col>
         </b-row>
-        </b-container>
-    </div>
+    </b-container>
 </template>
 <script>
 export default {
@@ -27,18 +24,9 @@ export default {
 <style lang="scss">
     @import 'assets/scss/variables';
 
-    #bottom {
-        hr {
-            display:block;
-            border:none;
-            height:10px;
-            background-repeat: repeat-x;
-            background-size:contain;
-            margin: 0px;        
-        }
-        .footer {
-            padding: 20px 0;
-        } 
+    .footer {
+        padding: 20px 0;
+
         .licence-cont {
             img {
                 width: 58px;
@@ -50,18 +38,17 @@ export default {
                 display: block;
             }
         }
-        small {
-            &.made-with {
+
+        small.made-with {
+            span:first-of-type {
+                color: $color-dark;
+            }
+            span:last-of-type {
+                color: #ee6161;
+            }
+            &:hover {
                 span:first-of-type {
-                    color: $color-dark;
-                }
-                span:last-of-type {
-                    color: #ee6161;
-                }
-                &:hover {
-                    span:first-of-type {
-                        color: #961888;
-                    }
+                    color: #961888;
                 }
             }
         }

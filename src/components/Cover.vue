@@ -1,26 +1,26 @@
 <template>
-    <div id="cover"  class="section">
-        <b-container class="cover-info">
+    <div class="section cover">
+        <b-container class="info">
             <b-row>
                 <b-col class="col-12">
-                <h1 class="sr-only">{{ $t('cover.title') }}</h1>
+                    <h1 class="sr-only">{{ $t('cover.title') }}</h1>
                 </b-col>
             </b-row>
             <b-row>
-                <b-row class="cover-image">
+                <b-row class="image-container">
                     <img
                         src="static/img/cover-image.png"
                         :alt="$t('cover.image-alt')"
                     />
                 </b-row>
-                <b-row class="cover-buttons">
+                <b-row class="buttons-container">
                     <b-col class="col-12 col-md-6">
-                        <b-button class="cover-button b-purple">
+                        <b-button class="cta-button b-purple">
                             {{ $t('cover.cta-1') }}
                         </b-button>
                     </b-col>
                     <b-col class="col-12 col-md-6">
-                        <b-button class="cover-button b-orange">
+                        <b-button class="cta-button b-orange">
                             {{ $t('cover.cta-2') }}
                         </b-button>
                     </b-col>
@@ -37,13 +37,13 @@ export default {};
 <style lang="scss">
     @import 'assets/scss/variables';
 
-    #cover {
+    .cover {
         color: $color-dark;
         position: relative;
         display: flex;
         height: 100vh;
 
-        .cover-info {
+        .info {
             position: relative;
             margin: auto;
 
@@ -52,11 +52,13 @@ export default {};
                 width: 90%;
                 margin: -10px auto 30px;
             }
+
             p {
                 font-size: 1.125rem;
             }
         }
-        .cover-image {
+
+        .image-container {
             position: relative;
             margin: auto;
             display: block;
@@ -67,12 +69,12 @@ export default {};
             }
         }
 
-        .cover-buttons{
+        .buttons-container {
             width: 93%;
             margin: 0 auto;
             margin-top: 30px;
 
-            .cover-button {
+            .cta-button {
                 display: block;
                 margin-top: 20px;
                 font-size: 1.25em;

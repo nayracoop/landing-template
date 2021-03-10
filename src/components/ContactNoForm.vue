@@ -1,5 +1,5 @@
 <template>
-    <footer id="contact" class="bg-grey section">
+    <div class="bg-grey section contact">
         <b-container>
         <b-row>
             <b-col class="col-12 col-md-6 section-heading">
@@ -10,58 +10,58 @@
         </b-row>
         <b-row class="contact-body mb-5">
             <b-col class="col-12 col-lg-5">
-            <div class="address">
-                <p v-for="(line, index) in address" :key="index">{{line}}</p>
-            </div>
-            <div class="email-list">
-                <p>{{ $t("contact.inquiries")}}</p>
-                <a class="long-mail" :href="'mailto: ' + emailList.inquiries">{{emailList.inquiries}}</a>
-                <p>{{ $t("contact.support")}}</p>
-                <a class="long-mail" :href="'mailto: ' + emailList.support">{{emailList.support}}</a>
-                <p>{{ $t("contact.students")}}</p>
-                <a class="long-mail" :href="'mailto: ' + emailList.students">{{emailList.students}}</a>
-            </div>
-            <ul class="social-links">
-                <li>
-                    <a
-                        target="_blank"
-                        :href="links.facebook"
-                        title="Facebook"
-                    >
-                        <font-awesome-icon :icon="['fab', 'facebook-square']" />
-                        <span class="sr-only">Facebook</span>
-                    </a>
-                </li>
-                <li>
-                    <a
-                        target="_blank"
-                        :href="links.instagram"
-                        title="Instagram"
-                    >
-                        <font-awesome-icon :icon="['fab', 'instagram']" />
-                        <span class="sr-only">Instagram</span>
-                    </a>
-                </li>
-                <li>
-                    <a
-                        target="_blank"
-                        :href="links.twitter"
-                        title="Twitter"
-                    >
-                        <font-awesome-icon :icon="['fab', 'twitter']" />
-                        <span class="sr-only">Twitter</span>
-                    </a>
-                </li>
-                <li class="mt-1 mb-1">
-                    <a  target="_blank"
-                        :href="links.mail"
-                        title="Mail"
-                    >
-                        <font-awesome-icon :icon="['fas','envelope']" />
-                        <span class="sr-only">Mail</span>
-                    </a>
-                </li>
-            </ul>
+                <div class="address">
+                    <p v-for="(line, index) in address" :key="index">{{line}}</p>
+                </div>
+                <div class="email-list">
+                    <p>{{ $t("contact.inquiries")}}</p>
+                    <a class="long-mail" :href="'mailto: ' + emailList.inquiries">{{emailList.inquiries}}</a>
+                    <p>{{ $t("contact.support")}}</p>
+                    <a class="long-mail" :href="'mailto: ' + emailList.support">{{emailList.support}}</a>
+                    <p>{{ $t("contact.students")}}</p>
+                    <a class="long-mail" :href="'mailto: ' + emailList.students">{{emailList.students}}</a>
+                </div>
+                <ul class="social-links">
+                    <li>
+                        <a
+                            target="_blank"
+                            :href="links.facebook"
+                            title="Facebook"
+                        >
+                            <font-awesome-icon :icon="['fab', 'facebook-square']" />
+                            <span class="sr-only">Facebook</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            target="_blank"
+                            :href="links.instagram"
+                            title="Instagram"
+                        >
+                            <font-awesome-icon :icon="['fab', 'instagram']" />
+                            <span class="sr-only">Instagram</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            target="_blank"
+                            :href="links.twitter"
+                            title="Twitter"
+                        >
+                            <font-awesome-icon :icon="['fab', 'twitter']" />
+                            <span class="sr-only">Twitter</span>
+                        </a>
+                    </li>
+                    <li class="mt-1 mb-1">
+                        <a  target="_blank"
+                            :href="links.mail"
+                            title="Mail"
+                        >
+                            <font-awesome-icon :icon="['fas','envelope']" />
+                            <span class="sr-only">Mail</span>
+                        </a>
+                    </li>
+                </ul>
             </b-col>
             <b-col class="col-12 col-lg-7 map">
                 <iframe 
@@ -72,7 +72,7 @@
             </b-col>
         </b-row>
         </b-container>
-    </footer>
+    </div>
 </template>
 
 <script>
@@ -101,76 +101,78 @@ export default {
             mapSrc: 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6569.3518211253695!2d-58.458708037097146!3d-34.58706615504157!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd437cf863662c1c2!2sBachillerato%20Popular%20Mocha%20Celis!5e0!3m2!1ses-419!2sar!4v1590551191925!5m2!1ses-419!2sar'
         }
     }
-
 }
 </script>
 
 <style lang="scss">
     @import 'assets/scss/variables';
 
-    .social-links {
-        margin: auto;
-        text-align: left;
-        li {
-            display: inline-block;
-            margin: 20px 40px;
-            font-size: 1.25em;
-            a {
-                color: $color-dark;
-                &:hover {
-                    color: $color-purple;
-                }
-            }
-        }
-    }
-
-    #contact {
+    .contact {
         padding-top: 65px;
         padding-bottom: 35px;
         
         .contact-body {
             justify-content: space-around;
-        }
-        .address {
-            text-align: left;
-            padding: 15px 0px;
-            p {
-                margin-bottom: 2px;
-            }
-        }
 
-        .email-list {
-            text-align: left;
-            padding: 15px 0px;
-            p {
-                margin-bottom: 2px;
-                font-weight: bold;
-            }
-            a {
-                display: block;
-                margin-bottom: 10px;
-            }
-        }
+            .address {
+                text-align: left;
+                padding: 15px 0px;
 
-        #map {
-            margin: auto;
-            min-height: 300px;
-            width: 100%;
-            height: 100%;
-        }
-        .social-links { 
-            margin-bottom: 25px;
-        }
-        .social-links li {
-            margin: 0px 30px 0 0!important;
+                p {
+                    margin-bottom: 2px;
+                }
+            }
+
+            .email-list {
+                text-align: left;
+                padding: 15px 0px;
+
+                p {
+                    margin-bottom: 2px;
+                    font-weight: bold;
+                }
+
+                a {
+                    display: block;
+                    margin-bottom: 10px;
+                }
+            }
+
+            .social-links { 
+                text-align: left;
+                margin: auto;
+                margin-bottom: 25px;
+
+                li {
+                    display: inline-block;
+                    font-size: 1.25em;
+                    margin: 0px 30px 0 0;
+
+                    a {
+                        color: $color-dark;
+
+                        &:hover {
+                            color: $color-purple;
+                        }
+                    }
+                }
+            }
+
+            #map {
+                margin: auto;
+                min-height: 300px;
+                width: 100%;
+                height: 100%;
+            }
         }
     }
 
     @media all and (max-width:768px) {
-        footer {
+        .contact {
             nav {
                 ul.navbar-nav {
                     flex-direction: column;
+
                     li {
                         margin: 10px 15px;
                     }

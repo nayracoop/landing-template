@@ -1,45 +1,45 @@
 <template>
-    <section id="donations" class="section">
+    <section class="section donations">
         <b-container>
         <b-row>
             <b-col class="col-12 col-md-6 section-heading">
-            <h2 class="pb-2">
-                {{$t('donations.title')}}</span>
-            </h2>
+                <h2 class="pb-2">
+                    {{$t('donations.title')}}</span>
+                </h2>
             </b-col>
         </b-row>
         <b-row>
             <b-col class="col-12 col-md-4">
-            <div class="donation-type mb-5">
-                <h4>{{$t('donations.donation-type-1')}}</h4>
-                <p><em>via MercadoPago</em></p>
-                <div v-for="(donation, index) in donationButtons">
-                    <b-button  
-                            :class="'donate-button ' + donation.class"
-                            mp-mode="dftl" 
-                            :href="donation.link" name="MP-payButton"
-                            :key="index"
-                    >
-                        {{ $t('donations.donateButton') }} {{donation.amount}}
-                    </b-button>
+                <div class="donation-group mb-5">
+                    <h4>{{$t('donations.donation-type-1')}}</h4>
+                    <p><em>via MercadoPago</em></p>
+                    <div v-for="(donation, index) in donationButtons">
+                        <b-button  
+                                :class="'donate-button ' + donation.class"
+                                mp-mode="dftl" 
+                                :href="donation.link" name="MP-payButton"
+                                :key="index"
+                        >
+                            {{ $t('donations.donateButton') }} {{donation.amount}}
+                        </b-button>
+                    </div>
                 </div>
-            </div>
-            <div class="donation-type">
-                <h4>{{$t('donations.donation-type-2')}}</h4>
-                <p><em>via PayPal</em></p>
-                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                    <input type="hidden" name="cmd" value="_donations" />
-                    <input type="hidden" name="business" :value="paypalMail" />
-                    <input type="hidden" name="currency_code" value="USD" />
-                    <b-button 
-                        type="submit" 
-                        class="donate-button b-orange" 
-                        name="submit" 
-                        alt="Donate with PayPal button">
-                        {{ $t('donations.donateButton') }}
-                    </b-button>
-                </form>
-            </div>
+                <div class="donation-group">
+                    <h4>{{$t('donations.donation-type-2')}}</h4>
+                    <p><em>via PayPal</em></p>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                        <input type="hidden" name="cmd" value="_donations" />
+                        <input type="hidden" name="business" :value="paypalMail" />
+                        <input type="hidden" name="currency_code" value="USD" />
+                        <b-button 
+                            type="submit" 
+                            class="donate-button" 
+                            name="submit" 
+                            alt="Donate with PayPal button">
+                            {{ $t('donations.donateButton') }}
+                        </b-button>
+                    </form>
+                </div>
             </b-col>   
             <b-col class="col-12 col-md-8">
                 <p>{{ $t('donations.content[0]') }}</p>
@@ -87,24 +87,29 @@
 <style lang="scss">
     @import 'assets/scss/variables';
 
-    #donations {
+    .donations {
         p {
             text-align: left;
         }
-        .donation-type {
+
+        .donation-group {
             padding-bottom: 10px;
+
             .donate-button {
                 font-size: 1em;
                 width: 90%;
                 margin: 10px auto;
                 border: none;
+
                 &:hover {
                     opacity: 85%;
                 }
             }
+
             em {
                 font-style: italic;
             }
         }
     }
+
 </style>

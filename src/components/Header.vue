@@ -198,7 +198,7 @@ export default {
             }
 
             @media all and (max-height: 500px) and (max-width: 991px),
-            all and (orientation: landscape) and (max-height: 500px) and (max-width: 991px) {
+                all and (orientation: landscape) and (max-height: 500px) and (max-width: 991px) {
                 #nav-collapse {
                     ul.navbar-nav {
                         height: 85vh;
@@ -314,30 +314,6 @@ export default {
                     a:hover {
                         border: 0!important;
                     }
-                }
-            }
-        }
-
-        .social-links-fixed {
-            right: -40px;
-            transition: right .3s ease-in-out;
-            background-color: $color-dark;
-
-            @media all and (max-width: 991px) {
-                position: static!important;
-                display: block;
-                box-shadow: none;
-                margin: 0 auto;
-                right: unset!important;
-                left: unset;
-                width: 50%;
-                max-width: 180px;
-
-                ul {
-                    flex-direction: row!important;
-                    margin: 0 auto;
-                    width: 100%;
-                    justify-content: space-between;
                 }
             }
         }

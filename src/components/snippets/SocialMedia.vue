@@ -37,13 +37,17 @@
     @import 'assets/scss/variables';
 
     .social-links-fixed {
+        // for animation on scroll, hide initially
+        right: -40px;
+        transition: right .3s ease-in-out;
+
         bottom: 5%;
-        right: 0;
         border-top-left-radius: 5px;
         border-bottom-left-radius: 5px;
         box-shadow: 1px 1px 5px 1px rgba(0, 15, 27, 0.07);
         padding: 10px;
-        background: #FFF;
+        background-color: $color-dark;
+
         ul {
             margin-bottom: 0;
             li {
@@ -53,5 +57,24 @@
                 }
             }
         }
+
+        @media all and (max-width: 991px) {
+            position: static!important;
+            display: block;
+            box-shadow: none;
+            margin: 0 auto;
+            right: unset!important;
+            left: unset;
+            width: 50%;
+            max-width: 180px;
+
+            ul {
+                flex-direction: row!important;
+                margin: 0 auto;
+                width: 100%;
+                justify-content: space-between;
+            }
+        }
     }
+
 </style>

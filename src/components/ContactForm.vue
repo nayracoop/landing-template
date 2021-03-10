@@ -81,8 +81,8 @@
                         </b-form-row>
 
                         <b-form-group
-                        :label="$t('Message')"
-                        label-for="message"
+                            :label="$t('Message')"
+                            label-for="message"
                         >
                             <b-form-textarea
                                 id="message"
