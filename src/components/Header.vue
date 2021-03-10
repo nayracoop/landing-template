@@ -3,7 +3,7 @@
         <b-container>
             <b-row>
                 <b-col>
-                    <b-navbar toggleable="lg" type="light">
+                    <b-navbar toggleable="lg" type="light" class="header-wrapper">
                         <b-navbar-brand href="#cover">
                             <h1>
                                 <img
@@ -123,13 +123,113 @@ export default {
             height: 40px;
         }
 
-        nav {
+        .header-wrapper {
             padding: .2rem 0!important;
 
             .navbar-brand {
                 h1 {
                     font-size: 12px;
                     margin-bottom: 0;
+                }
+            }
+
+            .navbar-nav {
+                padding: 0;
+
+                .nav-item {
+                    margin: 0 30px;
+                    font-size: .7em;
+
+                    &.cta-item {
+                        color: white;
+                        &.active {
+                            .nav-link {
+                                background: $color-dark!important;
+                                color: #FFF!important;
+                                border: 1px solid #FFF;
+                            }
+                        }
+                        .nav-link {
+                            border: 1px solid white;
+                            font-weight:bold;
+                            background: red!important;
+                            margin-top: .2rem;
+                            padding: .2rem 1rem;
+                            transition: all .15s ease-in-out;
+                            &:hover {
+                                background: white;
+                                color: $color-yellow;
+                            }
+                        }
+                    }
+
+                    &.active {
+                        .nav-link {
+                            border-bottom: 1px solid #fff;
+                        }
+                    }
+
+
+                    @media all and (max-width: 450px) {
+                        margin-bottom: 10px!important;
+                    }
+
+
+                    .nav-link {
+                        color: white;
+                        padding: 0.5rem 0;
+                        &:hover,
+                        &:focus {
+                            color: $color-yellow;
+                        }
+                    } 
+                    
+                }
+
+                li.lang-selector {
+                    text-transform: uppercase;
+                    a {
+                        &.dropdown-toggle {
+                            color: #FFF!important;
+                            &:hover,
+                            &:active {
+                                color: $color-yellow!important;
+                            }
+                        }
+                        border-color: #FFF!important;
+                        @media all and (max-width: 991px) {
+                            border: 0!important;
+                            a:hover {
+                                border: 0!important;
+                            }
+                        }
+                    }
+                    ul.dropdown-menu {
+                        min-width: unset;
+                        max-width: 60px;
+                        li {
+                            text-align: center;
+                            a {
+                                padding: 3px 15px;
+                                font-size: .7rem;
+                                &:active {
+                                    background: unset;
+                                    color: unset;
+                                }
+                            }
+                        }
+                    }
+                    @media all and (max-width: 991px) {
+                        a {
+                            padding: 0 12px 0 0;
+                            font-size: 1.25rem;
+                        }
+                        margin-bottom: 60px;
+                        border: 0!important;
+                        a:hover {
+                            border: 0!important;
+                        }
+                    }
                 }
             }
 
@@ -200,119 +300,30 @@ export default {
             @media all and (max-height: 500px) and (max-width: 991px),
                 all and (orientation: landscape) and (max-height: 500px) and (max-width: 991px) {
                 #nav-collapse {
-                    ul.navbar-nav {
+                    .navbar-nav {
                         height: 85vh;
                         overflow: scroll;
                         margin-top: 0!important;
                         padding-top: 130px!important;
                         padding-bottom: 10px;
                         justify-content: center;
-                        li.nav-item {
+                        .nav-item {
                             margin: 5px 0!important;
-                            a.nav-link {
-                                font-size: 1rem;
-                            }
-                            &.nav-item:last-of-type {
+
+                            &:last-of-type {
                                 min-height: unset;
                                 margin-bottom: 5px!important;
                             }
+
+                            a.nav-link {
+                                font-size: 1rem;
+                                font-weight:bold;
+                            }
                         }
+
                         .social-links-fixed {
                             padding-bottom: 20px;
                         }
-                    }
-                }
-            }
-        }
-
-        .navbar-nav {
-            padding: 0;
-
-            li.nav-item {
-                margin: 0 30px;
-                font-size: .7em;
-                &.cta-item {
-                    color: white;
-                    &.active {
-                        .nav-link {
-                            background: $color-dark!important;
-                            color: #FFF!important;
-                            border: 1px solid #FFF;
-                        }
-                    }
-                    a.nav-link {
-                        border: 1px solid white;
-                        background: transparent;
-                        margin-top: .2rem;
-                        padding: .2rem 1rem;
-                        transition: all .15s ease-in-out;
-                        &:hover {
-                            background: white;
-                            color: $color-yellow;
-                        }
-                    }
-                }
-                a.nav-link {
-                    color: white;
-                    padding: 0.5rem 0;
-                    &:hover,
-                    &:focus {
-                        color: $color-yellow;
-                    }
-                }
-                &.active {
-                    .nav-link {
-                        border-bottom: 1px solid #fff;
-                    }
-                }
-
-                @media all and (max-width: 450px) {
-                    margin-bottom: 10px!important;
-                }
-            }
-
-            li.lang-selector {
-                text-transform: uppercase;
-                a {
-                    &.dropdown-toggle {
-                        color: #FFF!important;
-                        &:hover,
-                        &:active {
-                            color: $color-yellow!important;
-                        }
-                    }
-                    border-color: #FFF!important;
-                    @media all and (max-width: 991px) {
-                        border: 0!important;
-                        a:hover {
-                            border: 0!important;
-                        }
-                    }
-                }
-                ul.dropdown-menu {
-                    min-width: unset;
-                    max-width: 60px;
-                    li {
-                        text-align: center;
-                        a {
-                            padding: 3px 15px;
-                            font-size: .7rem;
-                            &:active {
-                                background: unset;
-                                color: unset;
-                            }
-                        }
-                    }
-                }
-                @media all and (max-width: 991px) {
-                    a {
-                        padding: 0 12px 0 0;
-                        font-size: 1.25rem;
-                    }
-                    margin-bottom: 60px;
-                    border: 0!important;
-                    a:hover {
-                        border: 0!important;
                     }
                 }
             }
