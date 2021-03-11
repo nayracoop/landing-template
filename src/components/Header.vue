@@ -119,6 +119,10 @@ export default {
                 }
             }
 
+            .navbar-toggler {
+                border: none;
+            }
+
             .navbar-nav {
                 padding: 0;
 
@@ -140,7 +144,7 @@ export default {
 
                     .nav-link {
                         color: white;
-                        padding: 0.5rem 0;
+                        padding: 0.5rem;
                         font-weight: 600;
 
                         &:hover,
@@ -174,6 +178,8 @@ export default {
                     .dropdown-menu {
                         min-width: unset;
                         max-width: 60px;
+                        border-radius: 0;
+
                         li {
                             text-align: center;
                             a {
@@ -230,6 +236,7 @@ export default {
                                             color: black;
                                             padding: 0;
                                             font-size: 1.25rem;
+                                            font-weight: 600;
                                         }
                                     }
                                 }
