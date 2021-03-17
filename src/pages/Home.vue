@@ -5,8 +5,9 @@
     <faq-section id="faq" />
     <donations-section id="donations" />
     <contact-section id="contact" />
-    <contact-form-section/>
-    <footer-section/>
+    <video-section />
+    <contact-form-section />
+    <footer-section />
   </div>
 </template>
 
@@ -18,6 +19,8 @@ import DonationsSection from 'components/Donations.vue'
 import ContactSection from 'components/ContactNoForm.vue'
 import ContactFormSection from 'components/ContactForm.vue'
 import FooterSection from 'components/Footer.vue'
+import VideoSection from 'components/VideoSection.vue'
+
 
 
 export default {
@@ -28,7 +31,8 @@ export default {
     DonationsSection,
     ContactSection,
     ContactFormSection,
-    FooterSection
+    FooterSection,
+    VideoSection
   },
   data () {
     return {
