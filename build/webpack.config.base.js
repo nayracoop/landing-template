@@ -77,7 +77,7 @@ module.exports = {
     new VueLoaderPlugin(),
     new CopyWebpackPlugin([{
       from: utils.resolve('static/img'),
-      to: utils.resolve('docs/static/img'),
+      to: utils.resolve('dist/static/img'),
       toType: 'dir'
     }])
   ]

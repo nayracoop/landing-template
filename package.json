@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --progress --config build/webpack.config.dev.js --host=0.0.0.0",
-    "prod": "webpack --config build/webpack.config.prod.js"
+    "build": "webpack --config build/webpack.config.prod.js"
   },
   "keywords": [
     "Vue",
@@ -22,9 +22,11 @@
     "axios": "^0.19.2",
     "bootstrap-vue": "^2.13.1",
     "i18n": "^0.8.6",
+    "prerender-spa-plugin": "^3.4.0",
     "vue": "^2.6.11",
     "vue-axios": "^2.1.5",
     "vue-i18n": "^8.17.5",
+    "vue-meta": "^2.4.0",
     "vue-router": "^3.1.6"
   },
   "devDependencies": {
